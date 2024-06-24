@@ -4,7 +4,7 @@ home screen
 
 ![ecom screenshot one](https://github.com/ho-dl/Grocery-Shop-Django-ecommerce-2024--ho-dl-/assets/120004159/4946e445-f266-4128-bfb6-b9af952bc13c)
 
-
+.
 
 category (vegetables)
 
