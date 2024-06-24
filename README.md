@@ -2,8 +2,7 @@ Grocery Shop using django framework , login , registration , add to cart , check
 
 home screen
 
-
-![ecom screenshot two](https://github.com/ho-dl/Grocery-Shop-Django-ecommerce-2024--ho-dl-/assets/120004159/395c6f5d-b2bb-4dd1-b773-463f46bd726e)
+![ecom screenshot one](https://github.com/ho-dl/Grocery-Shop-Django-ecommerce-2024--ho-dl-/assets/120004159/4946e445-f266-4128-bfb6-b9af952bc13c)
 
 
 
