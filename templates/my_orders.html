@@ -1,0 +1,57 @@
+<!-- orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placed Orders</title>
+    <!-- Bootstrap CSS link (make sure you include the correct version for your project) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Optional: If you want to use Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .order-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .order-actions {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Placed Orders</h1>
+
+        {% if orders %}
+            <ul class="list-unstyled">
+                {% for order in orders %}
+                    <li class="order-card">
+                        <h5>Order #{{ order.id }} - Total Amount: ₹{{ order.total_amount }}</h5>
+                        <ul class="list-unstyled">
+                            {% for item in order.orderitem_set.all %}
+                                <li>{{ item.product.name }} - Quantity: {{ item.quantity }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="order-actions">
+                            <form action="{% url 'cancel_order' order.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Cancel Order</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No orders found.</p>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies (only necessary if you need JavaScript features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
