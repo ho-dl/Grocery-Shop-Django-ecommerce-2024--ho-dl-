@@ -1,1 +1,1 @@
-D:\sunray django\ecom-Desktop\ecom\Grocery shop-2024 django\demo screenshots
+Grocery Shop using django framework , login , registration , add to cart , checkout , place order , cancel order , responsive design
